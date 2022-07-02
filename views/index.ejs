@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./partials/head') %>
+  <body>
+    <!-- Navbar (sit on top) -->
+    <%- include('./partials/navbar') %>
+
+    <!-- Header -->
+    <%- include('./partials/header') %>
+
+    <!-- Page content -->
+    <div class="ps-content">
+      <!-- About Section -->
+      <div class="ps-row ps-padding-64" id="about">
+        <div class="ps-col m6 ps-padding-large ps-hide-small">
+          <img
+            src="images/principal.jpg"
+            class="ps-round ps-image ps-opacity-min"
+            alt="SAbores que enamoran"
+            width="600"
+            height="750"
+          />
+        </div>
+
+        <div class="ps-col m6 ps-padding-large">
+          <h1 class="ps-center">Pimenta & Sal</h1>
+          <br />
+          <p class="ps-large">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute iruredolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur.We only use
+            <span class="ps-tag ps-light-grey">seasonal</span> ingredients.
+          </p>
+          <p class="ps-large ps-text-grey ps-hide-medium">
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum consectetur adipiscing
+            elit, sed do eiusmod temporincididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          <p class="ps-large">Adipiscing elit penatibus, 
+            mattis nam convallis turpis ex dapibus porta. Faucibus risus sociosqu 
+            class nulla nibh conubia maecenas donec, tristique habitasse congue 
+            maximus molestie leo pharetra, vehicula euismod cras sem ornare montes 
+            ultrices. Duis quisque viverra potenti fames dictumst rutrum pharetra, 
+            commodo hendrerit fermentum feugiat vestibulum. Tincidunt maecenas 
+            posuere imperdiet quisque penatibus tortor fames fusce tempus, tristique 
+            pellentesque sollicitudin nibh dis neque urna cubilia, volutpat natoque 
+            vivamus mattis faucibus facilisi sapien habitasse. Libero magna curabitur 
+            fames donec condimentum accumsan vitae iaculis, sollicitudin pellentesque 
+            luctus dictum dictumst eleifend tristique, adipiscing ultricies eget maximus 
+            integer ligula gravida.</p>
+            <p class="ps-large">Turpis auctor platea lacinia congue maecenas primis morbi, ornare inceptos 
+              finibus quam sit blandit varius, aliquet arcu penatibus ac justo tellus. 
+              Nascetur elit nisi parturient lobortis montes ante, vulputate fringilla 
+              phasellus varius ridiculus, etiam velit magnis elementum lectus. Efficitur 
+              sem sodales dis turpis felis nibh dignissim mus, montes facilisis pretium 
+              iaculis venenatis conubia vulputate, quam quisque tincidunt potenti suscipit 
+              nostra est. Pulvinar porta dapibus mauris pellentesque magna montes enim neque 
+              massa volutpat, duis curae malesuada natoque quis ad ultrices molestie. 
+              </p>
+
+        </div>
+      </div>
+
+      <hr />
+      <!-- Menu Section -->
+      <div class="ps-row ps-padding-64" id="menu">
+        <div class="ps-col l6 ps-padding-large">
+          <h1 class="ps-center">Nosso Menu</h1>
+          <br />
+          <% for(let prato of menu){ %>
+            <h3><a href="/detalhe/<%= prato.id %>"><%= prato.name %></a></h3>
+            <p>
+              <%= prato.description %>  U$S <%= prato.price.toFixed(2) %>
+            </p>
+            <br>
+          <% } %>
+        </div>
+
+        <div class="ps-col l6 ps-padding-large ps-img-menu">
+          <img
+            src="images/menu.jpg"
+            class="ps-round ps-image ps-opacity-min"
+            alt="Menu"
+          />
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <%- include('./partials/footer') %>
+    </div>
+  </body>
+</html>
